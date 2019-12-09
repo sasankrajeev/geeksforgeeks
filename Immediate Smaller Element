@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define ld long double
+#define pb push_back
+#define mp make_pair
+#define ff first
+#define ss second
+using namespace std;
+
+
+int main() {
+    string x,y,z;
+    ll a,b,c,d,t,i,j;
+    cin>>t;
+    while(t--){
+        cin>>a;
+        vector < ll > x;
+        for(i=0;i<a;i++){
+            cin>>b;
+            x.pb(b);
+        }
+        for(i=0;i<a-1;i++){
+            if(x[i]>x[i+1]){
+                cout<<x[i+1]<<" ";
+            }else{
+                cout<<-1<<" ";
+            }
+        }
+        cout<<-1<<endl;
+    }
+}
