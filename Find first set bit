@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+#define ll unsigned long long
+#define ld long double
+#define pb push_back
+#define mp make_pair
+#define ff first
+#define ss second
+using namespace std;
+
+
+int main() {
+    ll a,b,c,d,t,i,j;
+    cin>>t;
+    while(t--){
+       cin>>a;
+       if(a%2!=0){
+           cout<<1<<endl;
+       }else{
+           vector < ll > x;
+           while(a!=0){
+               x.pb(a%2);
+               a=a/2;
+           }
+           d=0;
+           x.pb(d);
+           b=0;
+           //reverse(x.begin(),x.end());
+           for(i=0;i<x.size();i++){
+               if(x[i]==1){
+                   b=i+1;
+                   break;
+               }
+           }
+           cout<<b<<endl;
+       }
+    }
+}
