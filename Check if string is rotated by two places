@@ -1,0 +1,55 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define ld long double
+#define pb push_back
+#define mp make_pair
+#define ff first
+#define ss second
+using namespace std;
+
+
+int main() {
+    string x,y,z;
+    ll a,b,c,d,t,i,j;
+    cin>>t;
+    while(t--){
+        cin>>x;
+        cin>>y;
+        b=0;
+        if(x.size()==y.size()){
+        a=y.size();
+        z=y;
+        for(i=0;i<2;i++){
+            //cout<<y<<endl;
+            char r = y[a-1];
+            for(j=a-1;j>=1;j--){
+                y[j]=y[j-1];
+            }
+            y[0]=r;
+        }
+        if(x==y){
+            b++;
+        }
+        y=z;
+        for(i=0;i<2;i++){
+            //cout<<y<<endl;
+            char r = y[0];
+            for(j=0;j<a-1;j++){
+                y[j]=y[j+1];
+            }
+            y[a-1]=r;
+        }
+        if(x==y){
+            b++;
+        }
+        if(b>0){
+            cout<<1<<endl;
+        }else{
+            cout<<0<<endl;
+        }
+        }else{
+            cout<<0<<endl;
+        }
+    }
+    
+}
