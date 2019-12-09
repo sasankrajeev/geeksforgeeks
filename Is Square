@@ -1,0 +1,71 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define ld long double
+#define pb push_back
+#define mp make_pair
+#define ff first
+#define ss second
+using namespace std;
+
+
+int main() {
+    ll t;
+    cin>>t;
+    while(t--){
+        ll x1,y1,x2,y2,x3,y3,x4,y4;
+        cin>>x1>>y1>>x2>>y2>>x3>>y3>>x4>>y4;
+        ll a,b,c,d=0;
+        a = sqrt((pow(x1-x2,2)+pow(y1-y2,2)));
+        b = sqrt((pow(x1-x3,2)+pow(y1-y3,2)));
+        c = sqrt((pow(x1-x4,2)+pow(y1-y4,2)));
+        vector <  ll > x;
+        x.pb(a);
+        x.pb(b);
+        x.pb(c);
+        sort(x.begin(),x.end());
+        if((x[0]==x[1]) && (x[0]!=0)){
+            d++;   
+        }
+        x.clear();
+        ll a1,b1,c1;
+        a1 = sqrt((pow(x2-x1,2)+pow(y2-y1,2)));
+        b1 = sqrt((pow(x2-x3,2)+pow(y2-y3,2)));
+        c1 = sqrt((pow(x2-x4,2)+pow(y2-y4,2)));
+        x.pb(a1);
+        x.pb(b1);
+        x.pb(c1);
+        sort(x.begin(),x.end());
+        if((x[0]==x[1]) && (x[0]!=0)){
+            d++;   
+        }
+        x.clear();
+        ll a2,b2,c2;
+        a2 = sqrt((pow(x3-x2,2)+pow(y3-y2,2)));
+        b2 = sqrt((pow(x3-x1,2)+pow(y3-y1,2)));
+        c2 = sqrt((pow(x3-x4,2)+pow(y3-y4,2)));
+        x.pb(a2);
+        x.pb(b2);
+        x.pb(c2);
+        sort(x.begin(),x.end());
+        if((x[0]==x[1]) && (x[0]!=0)){
+            d++;   
+        }
+        x.clear();
+        ll a3,b3,c3;
+        a3 = sqrt(pow(x4-x2,2)+pow(y4-y2,2));
+        b3 = sqrt(pow(x4-x3,2)+pow(y4-y3,2));
+        c3 = sqrt(pow(x4-x1,2)+pow(y4-y1,2));
+        x.pb(a3);
+        x.pb(b3);
+        x.pb(c3);
+        sort(x.begin(),x.end());
+        if((x[0]==x[1]) && (x[0]!=0)){
+            d++;   
+        }
+        if(d==4){
+            cout<<"Yes"<<endl;
+        }else{
+            cout<<"No"<<endl;
+        }
+    }
+}
