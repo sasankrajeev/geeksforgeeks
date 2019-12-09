@@ -1,0 +1,20 @@
+function
+
+int convertFive(int n)
+{
+    vector < long long > x;
+    while(n!=0){
+        long long a=n%10;
+        if(a==0){
+            x.push_back(5);
+        }else{
+            x.push_back(a);
+        }
+        n=n/10;
+    }
+    long long b=0;
+    for(long long i=0;i<x.size();i++){
+        b=b+x[i]*pow(10,i);
+    }
+    return b;
+}
