@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define ld long double
+#define pb push_back
+#define mp make_pair
+#define ff first
+#define ss second
+using namespace std;
+void recurr(string s,int i,string sd){
+    if(i==s.length()-1){
+        cout<<sd<<s[i]<<")";
+    }
+    else{
+        string te="";
+        te=te+s[i]+" ";
+        sd.append(te);
+        recurr(s,i+1,sd);
+        recurr(s,i+1,sd.substr(0,sd.size()-1));
+    }
+}
+int main() {
+    ll t;
+    cin>>t;
+    while(t--){
+        string s;
+        cin>>s;
+        string sd="(";
+        recurr(s,0,sd);
+        cout<<"\n";
+    }
+}
